@@ -1,0 +1,23 @@
+@use '../base' as base;
+
+#floatingPhonesContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  div {
+    display: flex;
+    margin-left: -12rem;
+
+    img:nth-child(1) {
+      z-index: 0;
+      margin-top: -17.6rem;
+    }
+
+    img:nth-child(2) {
+      height: fit-content;
+      margin-left: -15rem;
+      margin-top: -4rem;
+    }
+  }
+}

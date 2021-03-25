@@ -1,0 +1,330 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+#navBarContainer {
+  max-width: 80rem;
+  width: 92vw;
+  height: 9.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+#navBarContainer img {
+  height: 6.36rem;
+}
+#navBarContainer #navBarItems {
+  display: flex;
+  justify-content: space-between;
+  width: 34rem;
+  padding: 0;
+}
+
+#navBarItems {
+  font-weight: 600;
+  font-size: 1rem;
+}
+#navBarItems li a:not(.selectedNavLink) {
+  color: #252b42;
+}
+
+.selectedNavLink {
+  color: #fa4a0c;
+}
+
+#heroSectionContainer {
+  background-image: url("../../components/HeroSection/assets/HeroImage.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: 9.75rem;
+  background-size: cover;
+  height: 85vh;
+  min-height: 47rem;
+  margin-top: -9.75rem;
+  padding-top: 7rem;
+  display: flex;
+  align-items: center;
+  z-index: -1;
+}
+#heroSectionContainer > div {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  z-index: 2;
+}
+#heroSectionContainer > div h3 {
+  font-size: 1.5rem;
+  padding-bottom: 0.8rem;
+}
+#heroSectionContainer > div h3:nth-child(3) {
+  font-weight: 500;
+  padding-top: 1.8rem;
+}
+#heroSectionContainer > div > h1 {
+  font-size: 3.625rem;
+  font-family: "Poppins", sans-serif;
+  line-height: 5rem;
+}
+#heroSectionContainer > div > div {
+  padding-top: 2rem;
+}
+#heroSectionContainer > div > div button {
+  font-size: 1.5rem;
+  color: #fff;
+  width: 14.75rem;
+  height: 4.25rem;
+  border-radius: 1.875rem;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+#heroSectionContainer > div > div button:nth-child(1) {
+  background-color: #fa4a0c;
+  border: none;
+  margin-right: 2rem;
+}
+#heroSectionContainer > div > div button:nth-child(1):hover {
+  filter: brightness(1.5);
+}
+#heroSectionContainer > div > div a:nth-child(2) button {
+  background-color: transparent;
+  border: solid 1px #fff;
+}
+#heroSectionContainer > div > div a:nth-child(2) button:hover {
+  background-color: #fa4a0c;
+  border: none;
+}
+
+#floatingPhonesContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+#floatingPhonesContainer div {
+  display: flex;
+  margin-left: -12rem;
+}
+#floatingPhonesContainer div img:nth-child(1) {
+  z-index: 0;
+  margin-top: -17.6rem;
+}
+#floatingPhonesContainer div img:nth-child(2) {
+  height: fit-content;
+  margin-left: -15rem;
+  margin-top: -4rem;
+}
+
+#howTheAppWorksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#howTheAppWorksContainer .line {
+  width: 100%;
+  max-width: 54rem;
+  height: 3px;
+  background-color: #e4e4e4;
+}
+#howTheAppWorksContainer > h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.75rem;
+  font-weight: 600;
+  margin-top: 4rem;
+}
+#howTheAppWorksContainer .cardContainer {
+  display: grid;
+  min-height: 30rem;
+  width: 100%;
+  max-width: 80rem;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+#howTheAppWorksContainer .cardContainer img {
+  filter: drop-shadow(2.875rem 1.75rem 8.125rem rgba(46, 4, 4, 0.15));
+}
+#howTheAppWorksContainer .cardContainer div {
+  align-self: center;
+  justify-self: center;
+}
+#howTheAppWorksContainer .cardContainer h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fa4a0c;
+  line-height: 3.2rem;
+}
+#howTheAppWorksContainer .cardContainer h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 3.2rem;
+  color: #252b42;
+}
+#howTheAppWorksContainer .cardContainer p {
+  margin-top: 1.8rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 26rem;
+  color: #737373;
+}
+#howTheAppWorksContainer div:nth-child(4) > div {
+  padding-left: 12rem;
+}
+
+#downloadAppContainer {
+  background-image: url("../../components/DownloadApp/assets/DownloadAppBackground.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 62vh;
+  min-height: 32rem;
+  margin-top: 10rem;
+  display: flex;
+  align-items: center;
+}
+#downloadAppContainer > div {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 80rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  z-index: 2;
+}
+#downloadAppContainer > div h3 {
+  font-size: 1.5rem;
+  padding-bottom: 0.8rem;
+  font-weight: 500;
+  padding-top: 0.4rem;
+}
+#downloadAppContainer > div > h2 {
+  font-size: 2.5rem;
+  font-family: "Poppins", sans-serif;
+  line-height: 5rem;
+}
+#downloadAppContainer > div > div {
+  padding-top: 2.8rem;
+}
+#downloadAppContainer > div > div button {
+  font-size: 1rem;
+  color: #fff;
+  width: 10rem;
+  height: 4.25rem;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+#downloadAppContainer > div > div button:nth-child(1) {
+  background-color: #fa4a0c;
+  border: none;
+  margin-right: 2rem;
+}
+#downloadAppContainer > div > div button:nth-child(1):hover {
+  filter: brightness(1.5);
+}
+#downloadAppContainer > div > div a:nth-child(2) button {
+  background-color: transparent;
+  border: solid 1px #fff;
+}
+#downloadAppContainer > div > div a:nth-child(2) button:hover {
+  background-color: #fa4a0c;
+  border: none;
+}
+
+#footerContainer {
+  width: 92vw;
+  max-width: 80rem;
+  margin: 0 auto;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#footerContainer > div {
+  display: flex;
+  width: 10rem;
+  justify-content: space-between;
+  align-items: center;
+}
+#footerContainer p {
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=globalStyles.css.map */

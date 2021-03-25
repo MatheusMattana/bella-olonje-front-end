@@ -1,0 +1,35 @@
+@use '../base' as base;
+
+#navBarContainer {
+  max-width: base.$maxContainerWidth;
+  width: base.$containerWidth;
+  height: 9.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+  img {
+    height: 6.36rem;
+  }
+
+  #navBarItems {
+    display: flex;
+    justify-content: space-between;
+    width: 34rem;
+    padding: 0;
+  }
+}
+
+#navBarItems {
+  font-weight: 600;
+  font-size: 1rem;
+
+  li a:not(.selectedNavLink) {
+    color: base.$color-text;
+  }
+}
+
+.selectedNavLink {
+  color: base.$color-orange;
+}

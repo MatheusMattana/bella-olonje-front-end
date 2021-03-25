@@ -1,0 +1,69 @@
+@use '../base' as base;
+
+#howTheAppWorksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .line {
+    width: 100%;
+    max-width: 54rem;
+    height: 3px;
+    background-color: #e4e4e4;
+  }
+
+  > h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.75rem;
+    font-weight: 600;
+    margin-top: 4rem;
+  }
+
+  .cardContainer {
+    display: grid;
+    min-height: 30rem;
+    width: 100%;
+    max-width: base.$maxContainerWidth;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+
+    img {
+      filter: drop-shadow(2.875rem 1.75rem 8.125rem rgba(46, 4, 4, 0.15));
+    }
+
+    div {
+      align-self: center;
+      justify-self: center;
+    }
+
+    h3 {
+      font-size: base.$text-size-h3;
+      font-weight: 700;
+      color: base.$color-orange;
+      line-height: 3.2rem;
+    }
+
+    h2 {
+      font-size: base.$text-size-h2;
+      font-weight: 700;
+      line-height: 3.2rem;
+      color: base.$color-text;
+    }
+
+    p {
+      margin-top: 1.8rem;
+      font-size: base.$text-size-h3;
+      font-weight: 500;
+      width: 26rem;
+      color: base.$color-second-text;
+    }
+  }
+
+  div:nth-child(4) {
+    > div {
+      padding-left: 12rem;
+    }
+  }
+}

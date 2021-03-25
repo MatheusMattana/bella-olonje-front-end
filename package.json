@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "watchSass": "sass --watch ./styles/SASS/globalStyles.scss ./styles/CSS/globalStyles.css"
   },
   "dependencies": {
     "next": "10.0.9",

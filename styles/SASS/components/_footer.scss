@@ -1,0 +1,23 @@
+@use '../base' as base;
+
+#footerContainer {
+  width: base.$containerWidth;
+  max-width: base.$maxContainerWidth;
+  margin: 0 auto;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    width: 10rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+  p {
+    font-size: 0.8rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+  }
+}
