@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 const index = ({ isScrollUp }) => {
-  const [isNavBarOpen, setIsNavBarOpen] = useState(true);
+  const [isNavBarOpen, setIsNavBarOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
