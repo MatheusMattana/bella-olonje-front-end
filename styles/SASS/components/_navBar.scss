@@ -1,5 +1,21 @@
 @use '../base' as base;
 
+#navContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: base.$color-white-text;
+  z-index: 10;
+  position: fixed;
+  transition: margin-top ease-in-out 0.5s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  margin-top: 0;
+
+  @media (max-width: 700px) {
+    box-shadow: none;
+  }
+}
+
 #navBarContainer {
   max-width: base.$maxContainerWidth;
   width: base.$containerWidth;
@@ -7,10 +23,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
 
-  img {
+  img:first-child {
     height: 6.36rem;
+  }
+
+  img:nth-child(3),
+  span {
+    display: none;
   }
 
   #navBarItems {
@@ -18,15 +38,58 @@
     justify-content: space-between;
     width: 34rem;
     padding: 0;
+
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
+  @media (max-width: 700px) {
+    img:nth-child(3),
+    span {
+      display: block;
+      height: 2rem;
+      font-size: 4rem;
+      font-weight: 500;
+      color: grey;
+      cursor: pointer;
+    }
+  }
+
+  #navBarMobile {
+    display: none;
+    @media (max-width: 700px) {
+      display: flex;
+      gap: 6rem;
+      height: 90vh;
+      top: 0;
+      width: 100vw;
+      left: 0;
+      flex-direction: column;
+      position: fixed;
+      align-items: center;
+      justify-content: flex-start;
+      padding-right: 5vw;
+      padding-top: 5rem;
+      font-size: 1rem;
+      background-color: base.$color-white-text;
+      z-index: 5;
+      margin-top: 9.75rem;
+      font-size: 3rem;
+    }
   }
 }
 
-#navBarItems {
+#navBarItems,
+#navBarMobile {
   font-weight: 600;
   font-size: 1rem;
 
   li a:not(.selectedNavLink) {
     color: base.$color-text;
+
+    &:hover {
+      color: brown;
+    }
   }
 }
 

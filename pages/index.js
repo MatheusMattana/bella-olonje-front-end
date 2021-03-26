@@ -1,10 +1,7 @@
-import Head from 'next/head';
-import NavBar from '../components/NavBar';
 import HeroSection from '../components/HeroSection';
 import FloatingPhones from '../components/FloatingPhones';
 import HowTheAppWorks from '../components/HowTheAppWorks';
 import DownloadApp from '../components/DownloadApp';
-import Footer from '../components/Footer';
 
 export default function Home({ request }) {
   const card1 = request.items[0];
@@ -13,12 +10,10 @@ export default function Home({ request }) {
 
   return (
     <main>
-      <NavBar />
       <HeroSection />
       <FloatingPhones />
       <HowTheAppWorks card1={card1} card2={card2} card3={card3} />
       <DownloadApp />
-      <Footer />
     </main>
   );
 }

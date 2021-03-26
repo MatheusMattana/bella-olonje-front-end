@@ -30,6 +30,16 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
 /* Set core body defaults */
 body {
   min-height: 100vh;
@@ -73,6 +83,23 @@ select {
     scroll-behavior: auto !important;
   }
 }
+#navContainer {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  z-index: 10;
+  position: fixed;
+  transition: margin-top ease-in-out 0.5s;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  margin-top: 0;
+}
+@media (max-width: 700px) {
+  #navContainer {
+    box-shadow: none;
+  }
+}
+
 #navBarContainer {
   max-width: 80rem;
   width: 92vw;
@@ -80,10 +107,13 @@ select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
 }
-#navBarContainer img {
+#navBarContainer img:first-child {
   height: 6.36rem;
+}
+#navBarContainer img:nth-child(3),
+#navBarContainer span {
+  display: none;
 }
 #navBarContainer #navBarItems {
   display: flex;
@@ -91,13 +121,59 @@ select {
   width: 34rem;
   padding: 0;
 }
+@media (max-width: 700px) {
+  #navBarContainer #navBarItems {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  #navBarContainer img:nth-child(3),
+#navBarContainer span {
+    display: block;
+    height: 2rem;
+    font-size: 4rem;
+    font-weight: 500;
+    color: grey;
+    cursor: pointer;
+  }
+}
+#navBarContainer #navBarMobile {
+  display: none;
+}
+@media (max-width: 700px) {
+  #navBarContainer #navBarMobile {
+    display: flex;
+    gap: 6rem;
+    height: 90vh;
+    top: 0;
+    width: 100vw;
+    left: 0;
+    flex-direction: column;
+    position: fixed;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 5vw;
+    padding-top: 5rem;
+    font-size: 1rem;
+    background-color: #fff;
+    z-index: 5;
+    margin-top: 9.75rem;
+    font-size: 3rem;
+  }
+}
 
-#navBarItems {
+#navBarItems,
+#navBarMobile {
   font-weight: 600;
   font-size: 1rem;
 }
-#navBarItems li a:not(.selectedNavLink) {
+#navBarItems li a:not(.selectedNavLink),
+#navBarMobile li a:not(.selectedNavLink) {
   color: #252b42;
+}
+#navBarItems li a:not(.selectedNavLink):hover,
+#navBarMobile li a:not(.selectedNavLink):hover {
+  color: brown;
 }
 
 .selectedNavLink {
@@ -108,15 +184,13 @@ select {
   background-image: url("../../components/HeroSection/assets/HeroImage.png");
   background-position: center;
   background-repeat: no-repeat;
-  background-position-y: 9.75rem;
   background-size: cover;
   height: 85vh;
   min-height: 47rem;
-  margin-top: -9.75rem;
-  padding-top: 7rem;
   display: flex;
   align-items: center;
   z-index: -1;
+  margin-top: -8rem;
 }
 #heroSectionContainer > div {
   margin: 0 auto;
@@ -169,26 +243,87 @@ select {
   border: none;
 }
 
+@media (max-width: 700px) {
+  #heroSectionContainer {
+    height: 90vh;
+    min-height: 90rem;
+    background-image: none;
+  }
+  #heroSectionContainer > div {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  #heroSectionContainer > div h3 {
+    color: #737373;
+    font-size: 2.6rem;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+  }
+  #heroSectionContainer > div h3:nth-child(3) {
+    font-size: 3.8rem;
+    padding-top: 3rem;
+  }
+  #heroSectionContainer > div > h1 {
+    font-size: 5.2rem;
+    color: #252b42;
+  }
+  #heroSectionContainer > div > div {
+    padding-top: 3rem;
+  }
+  #heroSectionContainer > div > div button {
+    font-size: 3rem;
+    width: 40rem;
+    height: 8rem;
+    border-radius: 3.5rem;
+    cursor: pointer;
+    transition: all ease 0.3s;
+    margin-top: 2rem;
+  }
+  #heroSectionContainer > div > div button:nth-child(1) {
+    background-color: #fa4a0c;
+    border: none;
+    margin-right: 2rem;
+    color: #fff;
+  }
+  #heroSectionContainer > div > div button:nth-child(1):hover {
+    filter: brightness(1.5);
+    color: #fff;
+  }
+  #heroSectionContainer > div > div a:nth-child(2) button {
+    border: solid 1px #fa4a0c;
+    color: #fa4a0c;
+  }
+  #heroSectionContainer > div > div a:nth-child(2) button:hover {
+    background-color: #fa4a0c;
+  }
+}
 #floatingPhonesContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 2rem;
+  margin-top: -9rem;
+  height: 60vh;
+  min-height: 650px;
 }
-#floatingPhonesContainer div {
-  display: flex;
-  margin-left: -12rem;
-}
-#floatingPhonesContainer div img:nth-child(1) {
-  z-index: 0;
-  margin-top: -17.6rem;
-}
-#floatingPhonesContainer div img:nth-child(2) {
-  height: fit-content;
-  margin-left: -15rem;
-  margin-top: -4rem;
+#floatingPhonesContainer img {
+  filter: drop-shadow(50px 30px 150px rgba(46, 4, 4, 0.21));
 }
 
+@media (max-width: 700px) {
+  #floatingPhonesContainer {
+    min-height: 100vw;
+    margin-top: -5rem;
+  }
+  #floatingPhonesContainer div {
+    display: flex;
+    width: 100vw;
+  }
+  #floatingPhonesContainer div img {
+    width: 95vw;
+    height: fit-content;
+  }
+}
 #howTheAppWorksContainer {
   display: flex;
   flex-direction: column;
@@ -212,12 +347,14 @@ select {
   width: 100%;
   max-width: 80rem;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 1fr;
+  grid-template-rows: 1fr;
   margin-top: 5rem;
   margin-bottom: 3rem;
 }
 #howTheAppWorksContainer .cardContainer img {
   filter: drop-shadow(2.875rem 1.75rem 8.125rem rgba(46, 4, 4, 0.15));
+  height: 30rem;
+  width: auto;
 }
 #howTheAppWorksContainer .cardContainer div {
   align-self: center;
@@ -242,10 +379,55 @@ select {
   width: 26rem;
   color: #737373;
 }
-#howTheAppWorksContainer div:nth-child(4) > div {
-  padding-left: 12rem;
+#howTheAppWorksContainer div:nth-child(4) div:first-child {
+  padding-left: 30%;
 }
 
+@media (max-width: 700px) {
+  #howTheAppWorksContainer {
+    margin-top: 10rem;
+  }
+  #howTheAppWorksContainer > h2 {
+    padding-bottom: 6rem;
+  }
+  #howTheAppWorksContainer .cardContainer:not(:nth-child(4)) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #howTheAppWorksContainer .cardContainer {
+    max-width: 40rem;
+  }
+  #howTheAppWorksContainer .cardContainer img {
+    margin-top: 6rem;
+    height: 150vw;
+    max-height: 60rem;
+    width: auto;
+  }
+  #howTheAppWorksContainer .cardContainer div {
+    text-align: center;
+  }
+  #howTheAppWorksContainer .cardContainer h3 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  #howTheAppWorksContainer .cardContainer h2 {
+    font-size: 4rem;
+    line-height: 5rem;
+    margin-bottom: 3rem;
+  }
+  #howTheAppWorksContainer .cardContainer p {
+    margin: 0 auto;
+    font-size: 3rem;
+    width: 34rem;
+  }
+  #howTheAppWorksContainer .cardContainer:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+  }
+  #howTheAppWorksContainer .cardContainer:nth-child(4) div:first-child {
+    padding-left: 0;
+  }
+}
 #downloadAppContainer {
   background-image: url("../../components/DownloadApp/assets/DownloadAppBackground.png");
   background-position: center;
@@ -306,6 +488,27 @@ select {
   border: none;
 }
 
+@media (max-width: 700px) {
+  #downloadAppContainer {
+    background-image: none;
+    background-color: #252b42;
+  }
+  #downloadAppContainer > div {
+    padding: 0 3rem;
+  }
+  #downloadAppContainer > div h3 {
+    font-size: 2rem;
+  }
+  #downloadAppContainer > div > h2 {
+    font-size: 4rem;
+    padding-bottom: 3rem;
+  }
+  #downloadAppContainer > div > div button {
+    font-size: 1.6rem;
+    width: 12rem;
+    height: 5rem;
+  }
+}
 #footerContainer {
   width: 92vw;
   max-width: 80rem;
@@ -325,6 +528,24 @@ select {
   font-size: 0.8rem;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  #footerContainer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #footerContainer > img {
+    display: none;
+  }
+  #footerContainer > div {
+    gap: 2rem;
+    width: 15rem;
+  }
+  #footerContainer p {
+    font-size: 1.3rem;
+  }
 }
 
 /*# sourceMappingURL=globalStyles.css.map */

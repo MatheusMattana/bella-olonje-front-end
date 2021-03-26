@@ -4,15 +4,13 @@
   background-image: url('../../components/HeroSection/assets/HeroImage.png');
   background-position: center;
   background-repeat: no-repeat;
-  background-position-y: 9.75rem;
   background-size: cover;
   height: 85vh;
   min-height: 47rem;
-  margin-top: -9.75rem;
-  padding-top: 7rem;
   display: flex;
   align-items: center;
   z-index: -1;
+  margin-top: -8rem;
 
   > div {
     margin: 0 auto;
@@ -68,6 +66,68 @@
         &:hover {
           background-color: base.$color-orange;
           border: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  #heroSectionContainer {
+    height: 90vh;
+    min-height: 90rem;
+    background-image: none;
+    > div {
+      padding-left: 1rem;
+      padding-right: 1rem;
+
+      h3 {
+        color: base.$color-second-text;
+        font-size: 2.6rem;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+        &:nth-child(3) {
+          font-size: 3.8rem;
+          padding-top: 3rem;
+        }
+      }
+
+      > h1 {
+        font-size: 5.2rem;
+        color: base.$color-text;
+      }
+
+      > div {
+        padding-top: 3rem;
+
+        button {
+          font-size: 3rem;
+          width: 40rem;
+          height: 8rem;
+          border-radius: 3.5rem;
+          cursor: pointer;
+          transition: all ease 0.3s;
+          margin-top: 2rem;
+
+          &:nth-child(1) {
+            background-color: base.$color-orange;
+            border: none;
+            margin-right: 2rem;
+            color: base.$color-white-text;
+
+            &:hover {
+              filter: brightness(1.5);
+              color: base.$color-white-text;
+            }
+          }
+        }
+        a:nth-child(2) button {
+          border: solid 1px base.$color-orange;
+          color: base.$color-orange;
+
+          &:hover {
+            background-color: base.$color-orange;
+          }
         }
       }
     }

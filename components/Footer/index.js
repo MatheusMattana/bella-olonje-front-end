@@ -27,7 +27,7 @@ const index = () => {
           <img src="instagramIcon.svg" alt="Twitter icon" />
         </a>
       </div>
-      <p>Copywright 2020 Bella Olonje.com</p>
+      <p>Copywright 2021 Bella Olonje.com</p>
     </section>
   );
 };

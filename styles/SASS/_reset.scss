@@ -36,6 +36,17 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 /* Set core body defaults */
 
 body {
