@@ -9,6 +9,10 @@
   align-items: center;
   justify-content: space-between;
 
+  > img {
+    width: 15rem;
+  }
+
   > div {
     display: flex;
     width: 10rem;

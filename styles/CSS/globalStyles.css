@@ -518,6 +518,9 @@ select {
   align-items: center;
   justify-content: space-between;
 }
+#footerContainer > img {
+  width: 15rem;
+}
 #footerContainer > div {
   display: flex;
   width: 10rem;

@@ -3,7 +3,7 @@ import React from 'react';
 const index = () => {
   return (
     <section id="footerContainer">
-      <img src="BellaOlongeLogo.png" alt="Web site Logo" />
+      <img src="RestaurantLogo.png" alt="Web site Logo" />
       <div>
         <a
           href="https://twitter.com/"
@@ -27,7 +27,7 @@ const index = () => {
           <img src="instagramIcon.svg" alt="Twitter icon" />
         </a>
       </div>
-      <p>Copywright 2021 Bella Olonje.com</p>
+      <p>Copywright 2021 restaurant.com</p>
     </section>
   );
 };

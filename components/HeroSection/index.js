@@ -8,9 +8,9 @@ const index = () => {
         <div>
           <h3>Food app</h3>
           <h1>
-            Why stay hungry when <br /> you can order from Bella Olonje?
+            Why stay hungry when <br /> you can order from us?
           </h1>
-          <h3>Download the Bella Olonje's food app now on</h3>
+          <h3>Download the Restaurant's food app now on</h3>
           <div>
             <a
               href="https://play.google.com/store/apps/details?id=br.com.brainweb.ifood&hl=pt_BR&gl=US"

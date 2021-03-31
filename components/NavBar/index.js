@@ -23,7 +23,7 @@ const index = ({ isScrollUp }) => {
       }
     >
       <nav id="navBarContainer">
-        <img src="/BellaOlongeLogo.png" alt="Web Site Logo Bella Olonge" />
+        <img src="/RestaurantLogo.png" alt="Web Site Logo Bella Olonge" />
         <ul id="navBarItems" role="list">
           <li>
             <Link href="/">
